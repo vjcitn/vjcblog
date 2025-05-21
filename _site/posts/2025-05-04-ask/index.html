@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -195,21 +215,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="in-the-beginning" class="level1">
 <h1>In the beginning …</h1>
-<p>… there was a 9-track tape shipped from Bell Labs. <a href="https://en.wikipedia.org/wiki/S_(programming_language)">S</a> would be installed for “unix”. Extensions could be programmed in Fortran. S REPORT presaged Sweave and knitr: <a href="https://en.wikipedia.org/wiki/Troff">troff</a>, <a href="https://en.wikipedia.org/wiki/Eqn_(software)">eqn</a>, <a href="https://en.wikipedia.org/wiki/PIC_(markup_language)">pic</a> could be interlarded with S computations. I have lost the associated technical report and the Wadsworth &amp; Brooks/Cole volume <a href="https://www.google.com/search?tbm=bks&amp;q=isbn:0534050166">Extending the S System</a>.</p>
+<p>… there was a 9-track tape shipped from Bell Labs. <a href="https://en.wikipedia.org/wiki/S_(programming_language)">S</a> would be installed for “unix”. Extensions could be programmed in Fortran. I started using this around 1985.</p>
+<p>S REPORT presaged Sweave and knitr: <a href="https://en.wikipedia.org/wiki/Troff">troff</a>, <a href="https://en.wikipedia.org/wiki/Eqn_(software)">eqn</a>, <a href="https://en.wikipedia.org/wiki/PIC_(markup_language)">pic</a> could be interlarded with S computations.</p>
+<p>Here’s a taste of inputs and outputs for S REPORT. In the left hand panel of Figure 1, .PP starts a paragraph, .EQ and .EN offset an equation markup, and backslash-left-bracket is used to start a block of S code that will be executed when the report is compiled. A right-bracket closes the code block. This markup generates the second paragraph in the right hand panel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="combo.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. Left panel: troff, eqn, and S code for processing by S REPORT. Right panel: output including a table for which code is not shown. From <span class="citation" data-cites="becker1984s">Becker and Chambers (<a href="#ref-becker1984s" role="doc-biblioref">1984</a>)</span></figcaption>
+</figure>
+</div>
 </section>
 <section id="fast-forward" class="level1">
 <h1>Fast forward:</h1>
+<p>In May 2002, Bioconductor 1.0 was released with 15 packages, developed for version 1.5 of R. By April of 2025 the collection has grown to over 2300 software packages, developed for version 4.5 of R. To give a sense of the components and processes in play, I made a sketch:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="crazy.jpg" class="img-fluid figure-img"></p>
-<figcaption>Figure 1. Author’s agitated overview of Bioconductor in early 2024. The motivation was, in part, an encounter with the notion that LaTeX might be replaced by Typst.</figcaption>
+<figcaption>Figure 2. Author’s agitated overview of Bioconductor in early 2024. The motivation was, in part, an encounter with the notion that LaTeX might be replaced by Typst.</figcaption>
 </figure>
 </div>
 <p>The “infinity signs” are used with “refresh” circular arrows to indicate that the associated resources can be modified at any time, while Bioconductor’s release is nominally “stable” for six months.</p>
 </section>
 <section id="in-sum" class="level1">
 <h1>In sum</h1>
-<p>Figure 1 depicts many aspects of Bioconductor that are invisible to users <em>as they do their work</em>. “Ask and you shall receive” is not an overt commitment of Bioconductor’s core. I found it interesting to reflect on the ways in which new capabilities are introduced into the system. The user experience, particularly for those doing statistical analysis of numerical data, is not dramatically different from that of the user of S in the 1980s. The number of technologies involved, and the maintenance efforts required for those technologies and their interactions, is much greater.</p>
+<p>Figure 2 depicts many aspects of Bioconductor that are invisible to users <em>as they do their work</em>. “Ask and you shall receive” is not an overt commitment of Bioconductor’s core. I found it interesting to reflect on the ways in which new capabilities are introduced into the system. The user experience, particularly for those doing statistical analysis of numerical data, is not dramatically different from that of the user of S in the 1980s. The number of technologies involved, and the maintenance efforts required for those technologies and their interactions, is much greater.</p>
 <p>It is natural, in my view, to refer to Bioconductor as an ecosystem, as it forms a home for many beings and processes engaged in biological data science. “Ecosystem”, for me, leads to “ecology”, and in my view, ecology is not just a study of interactions between beings and their environments, but includes a normative component. An ecology of Bioconductor will address how to manage its growth and change, identifying principles for expanding along new frontiers, for forming new connections, and for shedding materials that have lost value.</p>
 </section>
 <section id="upcoming" class="level1">
@@ -229,13 +258,21 @@ ul.task-list li input[type="checkbox"] {
 <li>curating genomic annotation</li>
 <li>large arrays: sparsity and indexing</li>
 </ul>
+</section>
+<section id="reference" class="level1">
+
+
 
 
 </section>
 
 <p>
 © 2025 Bioconductor. Content is published under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC-BY-4.0 License</a> for the text and <a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</a> for any code. | <a href="https://www.r-bloggers.com">R-Bloggers</a>
-</p></main> <!-- /main -->
+</p><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-becker1984s" class="csl-entry" role="listitem">
+Becker, Richard A., and John M. Chambers. 1984. <em>S: An Interactive Environment for Data Analysis and Graphics</em>. Pacific Grove, CA: Wadsworth.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
